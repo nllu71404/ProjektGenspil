@@ -18,26 +18,20 @@ namespace ProjektGenspil
         private string[] genre;
         private List<Kunder> forespørgsler = new List<Kunder> { };
 
-        //genre og aldergruppe "muligheder" for hver objekt
-        private string[] alleAlderGrupper = { "Alder Grupper:", "0-7 år", "fra 8 år" };
-        private string[] alleGenrer = { "Genre:", "RPG", "Familiespil", "Børnespil", "Brætspil med kort" };
+        //genre og aldergruppe stamdata
+        private static string[] alleAlderGrupper = { "Alder Grupper:", "0-7 år", "fra 8 år" };
+        private static string[] alleGenrer = { "Genre:", "RPG", "Familiespil", "Børnespil", "Brætspil med kort" };
 
 
         //colors interface
-        public string greenCursor = "=> \u001b[32m";
-        public string nonColor = "\u001b[0m";
-        public string BGYellow = "\u001b[43m";
-        public void BGC()
-        {
-            Console.BackgroundColor = ConsoleColor.Yellow;
-        }
-        public void NonBGC()
-        {
-            Console.ResetColor();
-        }
+        private static string greenCursor = "=> \u001b[32m";
+        private static string nonColor = "\u001b[0m";
+        private static string BGYellow = "\u001b[43m";
+        private static string selected = "\u001b[36;1m";
 
-        //overloaded constructor for tempporarity calling
-        public Spil()
+        
+        //overloaded constructor simpel version
+        private Spil()
         {
             forespørgsler = new List<Kunder>(); //erklæres at det nye objekt også har en forespørgsel list
         }
@@ -53,13 +47,16 @@ namespace ProjektGenspil
         }
 
 
-        //en formular til at udfylde info om spillet
-        public void OpretSpil()
+        //en formular til at udfylde info om spillet, kan bliver kaldet med Spil.OpretSpil();
+        public static void OpretSpil()
         {
+            //make an instance of Spil klasse
+            Spil tempSpil = new Spil();
+            
             //make a jagged array where each position is assigned a number, use the arrow keys to move the cursor
             string[][] jarray = new string[4][];
-            jarray[0] = new string[] { "Navn:", (BGYellow + navn + nonColor) };
-            jarray[1] = new string[] { "Ny Pris:", (BGYellow + nyPris + nonColor) };
+            jarray[0] = new string[] { "Navn:", (BGYellow + tempSpil.navn + nonColor) };
+            jarray[1] = new string[] { "Ny Pris:", (BGYellow + tempSpil.nyPris + nonColor)};
             jarray[2] = alleAlderGrupper;
             jarray[3] = alleGenrer;
 
@@ -118,25 +115,25 @@ namespace ProjektGenspil
                             else if (ver == 2)
                             {
                                 tempAG = jarray[ver][hor];
+                                jarray[ver][hor] = selected + jarray[ver][hor] + nonColor;
                             }
                             else
                             {
-                                string a = jarray[ver][hor];
-                                tempGenrer = [.. tempGenrer, a];
+                                tempGenrer = [.. tempGenrer, jarray[ver][hor]];
+                                jarray[ver][hor] = selected + jarray[ver][hor] + nonColor;
                             }
                             Console.Clear();
                             MyInterface.printHeader();
                         }
                         break;
                     case ConsoleKey.F5:
-                        Spil saveSpil = new Spil()
                         {
-                            navn = jarray[0][1],
-                            nyPris = jarray[1][1],
-                            alderGruppe = tempAG,
-                            genre = tempGenrer
+                            tempSpil.navn = jarray[0][1];
+                            tempSpil.nyPris = jarray[1][1];
+                            tempSpil.alderGruppe = tempAG;
+                            tempSpil.genre = tempGenrer;
                         };
-                        MyInterface.spilList.Add(saveSpil);
+                        MyInterface.spilList.Add(tempSpil);
                         stillNotDone = false;
                         break;
                 }
@@ -144,7 +141,7 @@ namespace ProjektGenspil
         }
 
         //test print
-        public void printSpilInfo()
+        public static void printSpilInfo()
         {
             foreach (Spil a in MyInterface.spilList)
             {
