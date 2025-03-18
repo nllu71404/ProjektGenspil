@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj": {}
+    "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj": {
+    "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj",
+        "projectUniqueName": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj",
         "projectName": "ProjektGenspil",
-        "projectPath": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj",
-        "packagesPath": "C:\\Users\\yuurei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\obj\\",
+        "projectPath": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj",
+        "packagesPath": "C:\\Users\\lene_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\yuurei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lene_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

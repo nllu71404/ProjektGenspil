@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektGenspil
 {
-    internal class Kunder
+    public class Kunder
     {
     }
 }

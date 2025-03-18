@@ -9,7 +9,7 @@ using ProjektGenspil;
 
 namespace ProjektGenspil
 {
-    internal class Spil
+    public class Spil
     {
         //class Spil Attributter, gælder for hver objekt
         private string navn { get; set; } = "Skriv navn";
