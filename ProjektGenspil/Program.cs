@@ -8,10 +8,9 @@
             MyInterface.printHeader();
             Console.CursorVisible = false; 
 
-            Spil tempSpil = new Spil();
-
-            tempSpil.OpretSpil();
-            tempSpil.printSpilInfo();
+            
+            Spil.OpretSpil();
+            Spil.printSpilInfo();
         }
     }
 }
