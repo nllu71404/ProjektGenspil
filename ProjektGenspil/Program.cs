@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Hej Team 5!");
             MyInterface.printHeader();
-            Console.CursorVisible = false;
+            Console.CursorVisible = false; 
 
             
             Spil.OpretSpil();

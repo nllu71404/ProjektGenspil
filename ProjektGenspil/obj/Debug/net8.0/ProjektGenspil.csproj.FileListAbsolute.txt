@@ -13,3 +13,11 @@ C:\Users\yuurei\Desktop\One\Uddannelse\Datamatiker\VS projekter\GIT\ProjektGensp
 C:\Users\yuurei\Desktop\One\Uddannelse\Datamatiker\VS projekter\GIT\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.pdb
 C:\Users\yuurei\Desktop\One\Uddannelse\Datamatiker\VS projekter\GIT\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.genruntimeconfig.cache
 C:\Users\yuurei\Desktop\One\Uddannelse\Datamatiker\VS projekter\GIT\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ref\ProjektGenspil.dll
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.AssemblyInfoInputs.cache
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.AssemblyInfo.cs
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.csproj.CoreCompileInputs.cache
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.sourcelink.json
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.dll
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\refint\ProjektGenspil.dll
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.pdb
