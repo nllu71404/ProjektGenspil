@@ -63,6 +63,7 @@ namespace ProjektGenspil
             MyInterface.spilList.Add(tempSpil);
         }
 
+        //fjerner spillet fra lagerlisten??
         public static void SletSpil()
         {
             
@@ -187,9 +188,9 @@ namespace ProjektGenspil
             Console.WriteLine(navn.PadRight(20) + nyPris.PadRight(20) + alderGruppe.PadRight(20) + antalSpillere.PadRight(20) + Convert.ToString(kopiPåLager.Count).PadRight(20) + forespørgsler.Count);
         }
 
-        public void TilføjeKunderForespørgsel(Kunder a)
+        public void TilføjeKunderForespørgsel(Kunder kunde)
         {
-            forespørgsler.Add(a);
+            forespørgsler.Add(kunde);
         }
         public string ConvertSpilInfoToSave()
         {
