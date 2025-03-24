@@ -21,7 +21,7 @@ namespace ProjektGenspil
         private string antalSpillere;
         public string[] genre;
         public List<SpilKopi> kopiPåLager = new();
-        public List<Kunder> forespørgsler = new();
+        public List<Kunder> forespørgsler = new();  
 
         //genre og aldergruppe stamdata
         private static string[] alleAlderGrupper = { "Alder Grupper:", "4-5 år", "6-7 år", "8-9 år", "10-12 år", "13-16 år", "16 år+", "18 år+", "8 år", "10 år" };

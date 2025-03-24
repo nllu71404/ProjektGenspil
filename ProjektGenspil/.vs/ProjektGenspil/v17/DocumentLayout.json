@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|c:\\users\\lene_\\desktop\\projektgenspil\\projektgenspil\\lagersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|solutionrelative:lagersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|c:\\users\\lene_\\desktop\\projektgenspil\\projektgenspil\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|c:\\users\\lene_\\desktop\\projektgenspil\\projektgenspil\\spilkopi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|solutionrelative:spilkopi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|c:\\users\\lene_\\desktop\\projektgenspil\\projektgenspil\\spil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|solutionrelative:spil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|c:\\users\\lene_\\desktop\\projektgenspil\\projektgenspil\\projektgenspil.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|solutionrelative:projektgenspil.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|c:\\users\\lene_\\desktop\\projektgenspil\\projektgenspil\\kunder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|solutionrelative:kunder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|c:\\users\\lene_\\desktop\\projektgenspil\\projektgenspil\\mycolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|solutionrelative:mycolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|c:\\users\\lene_\\desktop\\projektgenspil\\projektgenspil\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B451173E-367D-2760-0854-BA888A57CC69}|ProjektGenspil.csproj|solutionrelative:inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SpilKopi.cs",
+              "DocumentMoniker": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\SpilKopi.cs",
+              "RelativeDocumentMoniker": "SpilKopi.cs",
+              "ToolTip": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\SpilKopi.cs",
+              "RelativeToolTip": "SpilKopi.cs",
+              "ViewState": "AgIAAAYAAABAAAAAAAAhwA8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:38:28.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProjektGenspil",
+              "DocumentMoniker": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj",
+              "RelativeDocumentMoniker": "ProjektGenspil.csproj",
+              "ToolTip": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\ProjektGenspil.csproj",
+              "RelativeToolTip": "ProjektGenspil.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-24T12:37:16.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAoAAADAMzMzM7MhwBIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:37:15.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MyColor.cs",
+              "DocumentMoniker": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\MyColor.cs",
+              "RelativeDocumentMoniker": "MyColor.cs",
+              "ToolTip": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\MyColor.cs",
+              "RelativeToolTip": "MyColor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:37:15.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lagersystem.cs",
+              "DocumentMoniker": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\Lagersystem.cs",
+              "RelativeDocumentMoniker": "Lagersystem.cs",
+              "ToolTip": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\Lagersystem.cs",
+              "RelativeToolTip": "Lagersystem.cs",
+              "ViewState": "AgIAAAgAAAAAmJmZmZkMwA4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:37:15.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Kunder.cs",
+              "DocumentMoniker": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\Kunder.cs",
+              "RelativeDocumentMoniker": "Kunder.cs",
+              "ToolTip": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\Kunder.cs",
+              "RelativeToolTip": "Kunder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:37:15.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InputOutput.cs",
+              "DocumentMoniker": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\InputOutput.cs",
+              "RelativeDocumentMoniker": "InputOutput.cs",
+              "ToolTip": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\InputOutput.cs",
+              "RelativeToolTip": "InputOutput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:37:12.895Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "96b42808-6859-4577-ac5f-f40e7439adc1",
+        "Display": 0,
+        "X": 162,
+        "Y": 112,
+        "Width": 1128,
+        "Height": 473,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Spil.cs",
+              "DocumentMoniker": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\Spil.cs",
+              "RelativeDocumentMoniker": "Spil.cs",
+              "ToolTip": "C:\\Users\\lene_\\Desktop\\ProjektGenspil\\ProjektGenspil\\Spil.cs",
+              "RelativeToolTip": "Spil.cs",
+              "ViewState": "AgIAABgAAAD8MzMzMzMYwB8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:38:28.62Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
