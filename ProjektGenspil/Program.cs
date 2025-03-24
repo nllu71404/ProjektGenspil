@@ -3,14 +3,12 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hej Team 5!");
+        {            
             MyInterface.printHeader();
-            Console.CursorVisible = false; 
+            Console.CursorVisible = false;
 
-            
-            Spil.OpretSpil();
-            Spil.printSpilInfo();
+            InputOutput.Initialize();
+            MyInterface.Menu();
         }
     }
 }

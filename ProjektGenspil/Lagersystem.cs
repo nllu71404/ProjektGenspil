@@ -7,7 +7,7 @@ namespace ProjektGenspil;
 
 public class Lagersystem
 {
-	private List<Spil> Lager;
+	public List<Spil> Lager;
 
 	public Lagersystem()
 	{
@@ -39,7 +39,7 @@ public class Lagersystem
     {
 		var result = Lager.Where(spil =>
 			(navn == null || spil.Navn.Contains(navn, StringComparison.OrdinalIgnoreCase)) ||
-			(genre == null || spil.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase)).ToString();
+			(genre == null || spil.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase)).ToString());
         //IKKE FÆRDIG - I PROCESS
        
 
@@ -55,11 +55,11 @@ public class Lagersystem
 		}
 	}
 
-	public void PrintForespørgsler() //Metode: Udskriver liste med forespørgsler  - Mangler info fra Spil-klassen
+	public void PrintForespørgsler(Spil spil) //Metode: Udskriver liste med forespørgsler  - Mangler info fra Spil-klassen
 	{
 		//Mangler info fra spil-klassen
 
-		foreach (Spil kunde in Forespørgsler) //Der skal oprettes en liste, der hedder Forespørgsler
+		foreach (Kunder kunde in spil.forespørgsler) //Der skal oprettes en liste, der hedder Forespørgsler
 		{
 			Console.WriteLine($"{kunde}");
 		}
