@@ -1,14 +1,17 @@
-﻿namespace ProjektGenspil
+﻿using System.Reflection.Metadata;
+
+namespace ProjektGenspil
 {
     internal class Program
     {
         static void Main(string[] args)
-        {            
-            MyInterface.printHeader();
-            Console.CursorVisible = false;
+        {
+            
+            Spil spil = new Spil();
+            spil.OpdaterSpil();
+            Lagersystem.Lager.Add(spil);
 
-            InputOutput.Initialize();
-            MyInterface.Menu();
+            //søg pris, antal spillere, genre
         }
     }
 }

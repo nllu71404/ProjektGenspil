@@ -60,7 +60,7 @@ namespace ProjektGenspil
             //make an instance of Spil klasse
             Spil tempSpil = new Spil();
             tempSpil.OpdaterSpil();
-            MyInterface.spilList.Add(tempSpil);
+            //MyInterface.spilList.Add(tempSpil);
         }
 
         //fjerner spillet fra lagerlisten??
@@ -228,9 +228,9 @@ internal class MyInterface
             Console.SetCursorPosition(0, 4);
             foreach (Spil spil in spilList)
             {
-                if (choice == spilList.IndexOf(spil)) Console.Write(MyColor.green);
+                if (choice == spilList.IndexOf(spil)) Console.Write(StamData.green);
                 spil.PrintSpilOneLine();
-                Console.Write(MyColor.nonColor);
+                Console.Write(StamData.nonColor);
             }
             key = Console.ReadKey(true);
             switch (key.Key)

@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace ProjektGenspil;
 
-public class Lagersystem
+internal class Lagersystem
 {
-	public List<Spil> Lager;
+	public static List<Spil> Lager;
 
 	public Lagersystem()
 	{
@@ -25,26 +25,26 @@ public class Lagersystem
 	if(Lager.Contains(spil))
 			{
 			Lager.Remove(spil);
-			//Evt print af bekræftelse 
-			Console.WriteLine($"{spil.Navn} er fjernet fra lagerlisten"); //Der skal laves en properties/egenskaber af Spil-klassens attributter, så de andre klasser kan tilgå dem 
+			//Evt print af bekræftelse
+			Console.WriteLine($"{spil.navn} er fjernet fra lagerlisten"); //Der skal laves en properties/egenskaber af Spil-klassens attributter, så de andre klasser kan tilgå dem 
 		} 
 	else
 		{
-			Console.WriteLine($"{spil.Navn} findes ikke i lagerlisten");
+			Console.WriteLine($"{spil.navn} findes ikke i lagerlisten");
 		}
 	}
 
 
-    public List<Spil> SøgSpil(string navn = null, Enum genre = null, double pris = 0.00, Enum aldersgruppe = null, int SpillerAntal = 0, Enum sprog = null) //FEJL - ER IKKE FÆRDIG //Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
-    {
-		var result = Lager.Where(spil =>
-			(navn == null || spil.Navn.Contains(navn, StringComparison.OrdinalIgnoreCase)) ||
-			(genre == null || spil.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase)).ToString());
-        //IKKE FÆRDIG - I PROCESS
+  //  public List<Spil> SøgSpil(string navn = null, Enum genre = null, double pris = 0.00, Enum aldersgruppe = null, int SpillerAntal = 0, Enum sprog = null) //FEJL - ER IKKE FÆRDIG //Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
+  //  {
+		//var result = Lager.Where(spil =>
+		//	(navn == null || spil.navn.Contains(navn, StringComparison.OrdinalIgnoreCase)) ||
+		//	(genre == null || spil.genre.Equals(genre, StringComparison.OrdinalIgnoreCase)).ToString());
+  //      //IKKE FÆRDIG - I PROCESS
        
 
-        return result;
-    }
+  //      return result;
+  //  }
 
 	public void PrintLagerstatus() //Metode: udskriver en sorteret lagerlisten/ spil-listen
 	{
