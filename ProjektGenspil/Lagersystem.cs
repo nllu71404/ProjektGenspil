@@ -27,13 +27,10 @@ internal class Lagersystem
 	if(Lager.Contains(spil))
 			{
 			Lager.Remove(spil);
-<<<<<<< HEAD
+
 			//Evt print af bekræftelse
-			Console.WriteLine($"{spil.navn} er fjernet fra lagerlisten"); //Der skal laves en properties/egenskaber af Spil-klassens attributter, så de andre klasser kan tilgå dem 
-=======
-			//Evt print af bekræftelse 
-			Console.WriteLine($"\n{spil.navn} er nu fjernet fra lagerlisten");  
->>>>>>> a8bbd3a2dc3dfc8a98407db4cdc6b2077036253f
+			Console.WriteLine($"{spil.navn} er nu fjernet fra lagerlisten"); //Der skal laves en properties/egenskaber af Spil-klassens attributter, så de andre klasser kan tilgå dem 
+
 		} 
 	else
 		{
@@ -42,25 +39,23 @@ internal class Lagersystem
 	}
 
 
-<<<<<<< HEAD
-  //  public List<Spil> SøgSpil(string navn = null, Enum genre = null, double pris = 0.00, Enum aldersgruppe = null, int SpillerAntal = 0, Enum sprog = null) //FEJL - ER IKKE FÆRDIG //Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
-  //  {
-		//var result = Lager.Where(spil =>
-		//	(navn == null || spil.navn.Contains(navn, StringComparison.OrdinalIgnoreCase)) ||
-		//	(genre == null || spil.genre.Equals(genre, StringComparison.OrdinalIgnoreCase)).ToString());
-  //      //IKKE FÆRDIG - I PROCESS
-       
-
-  //      return result;
-  //  }
-=======
-	public List<Spil> SøgSpil(string navn = null, string[] genre = null, string pris = null, string alder = null, string antalSpillere = null)//Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
+	public static List<Spil> SøgSpil(List<Spil> Lager, string navn, string[] genre, string pris, string alder, string antalSpillere)//Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
     {
-		
-    }
->>>>>>> a8bbd3a2dc3dfc8a98407db4cdc6b2077036253f
 
-	public void PrintLagerstatus() //Metode: udskriver en sorteret lagerlisten/ spil-listen
+        var resultater = Lager.Where(spil =>
+            (string.IsNullOrEmpty(navn) || spil.navn.Contains(navn)) &&
+            (genre == null || genre.Length == 0 || genre.Contains(spil.Genre)) &&
+            (string.IsNullOrEmpty(pris) || spil.pris == pris) &&
+            (string.IsNullOrEmpty(alder) || spil.alder == alder) &&
+            (string.IsNullOrEmpty(antalSpillere) || spil.AntalSpillere == antalSpillere)
+        ).ToList();
+
+        return resultater;
+
+    }
+
+
+    public void PrintLagerstatus() //Metode: udskriver en sorteret lagerlisten/ spil-listen
 	{
 		foreach (Spil spil in Lager)
 		{
