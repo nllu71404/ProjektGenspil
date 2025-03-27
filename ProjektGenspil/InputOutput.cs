@@ -30,8 +30,8 @@ namespace ProjektGenspil
             {
                 string[] entries = line.Split(',');
                 string[] tempGenre = entries[4..(entries.Length - 1)]; //genre starts from index 4 and forth
-                Spil tempspil = new Spil(entries[0], entries[1], entries[2], entries[3], tempGenre);
-                MyInterface.spilList.Add(tempspil);
+                Spil tempspil = new Spil(entries[0], Convert.ToDouble(entries[1]), entries[2], entries[3], tempGenre);
+                //MyInterface.spilList.Add(tempspil);
             }
         }
 

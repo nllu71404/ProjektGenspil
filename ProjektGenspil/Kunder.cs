@@ -8,5 +8,15 @@ namespace ProjektGenspil
 {
     internal class Kunder
     {
-    }
+        private string navn;
+        private string mobilNummer;
+        private string emailAdresse;
+
+        public Kunder() { }
+
+        public void EmailOmSpil(string overskrift, string tekst, SpilKopi reserveretSpil)
+        {
+
+        }
+    }    
 }

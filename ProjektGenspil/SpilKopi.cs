@@ -11,9 +11,10 @@ namespace ProjektGenspil
     {
         double pris;
         string stand;
+        Kunder reservation;
 
-        private SpilKopi() { }
-        private SpilKopi(string navn, string nyPris, string alder, string antalSpillere, string[] genre, double pris, string stand)
+        public SpilKopi() { }
+        public SpilKopi(string navn, double nyPris, string alder, string antalSpillere, string[] genre, double pris, string stand)
             : base(navn, nyPris, alder, antalSpillere, genre)
         {
             this.pris = pris;

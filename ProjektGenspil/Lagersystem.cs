@@ -1,18 +1,21 @@
 ﻿using System;
 using ProjektGenspil;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using System.Linq;
 
 namespace ProjektGenspil;
 
 internal class Lagersystem
 {
-	public static List<Spil> Lager;
+	public static List<Spil> Lager = new List<Spil>();
+
 
 	public Lagersystem()
 	{
-		Lager = new List<Spil>();
+
 	}
+
 
 
 	public void TilføjSpil(Spil spil) //Metode: tilføjer spil til lagerlisten
@@ -28,31 +31,82 @@ internal class Lagersystem
 			{
 			Lager.Remove(spil);
 
+
 			//Evt print af bekræftelse
-			Console.WriteLine($"{spil.navn} er nu fjernet fra lagerlisten"); //Der skal laves en properties/egenskaber af Spil-klassens attributter, så de andre klasser kan tilgå dem 
+			Console.WriteLine($"{spil.Navn} er nu fjernet fra lagerlisten"); 
+
 
 		} 
 	else
 		{
-			Console.WriteLine($"{spil.navn} findes ikke i lagerlisten");
+			Console.WriteLine($"{spil.Navn} findes ikke i lagerlisten");
 		}
 	}
 
-
-	public static List<Spil> SøgSpil(List<Spil> Lager, string navn, string[] genre, string pris, string alder, string antalSpillere)//Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
+    public static List<Spil> SøgSpil(List<Spil> Lager, string navn, string valgtGenre, double MinPris, double MaxPris, string valgtAlder, string valgtAntalSpillere)
     {
-
         var resultater = Lager.Where(spil =>
-            (string.IsNullOrEmpty(navn) || spil.navn.Contains(navn)) &&
-            (genre == null || genre.Length == 0 || genre.Contains(spil.Genre)) &&
-            (string.IsNullOrEmpty(pris) || spil.pris == pris) &&
-            (string.IsNullOrEmpty(alder) || spil.alder == alder) &&
-            (string.IsNullOrEmpty(antalSpillere) || spil.AntalSpillere == antalSpillere)
+            (string.IsNullOrEmpty(navn) || spil.Navn.Contains(navn)) &&
+            (string.IsNullOrEmpty(valgtGenre) || spil.Genre.Contains(valgtGenre)) &&
+            (spil.NyPris >= MinPris && spil.NyPris <= MaxPris) &&
+            (string.IsNullOrEmpty(valgtAlder) || spil.AlderGruppe == valgtAlder) &&
+            (string.IsNullOrEmpty(valgtAntalSpillere) || spil.AntalSpillere == valgtAntalSpillere)
         ).ToList();
 
         return resultater;
 
     }
+
+
+    public static void BrugerInputSøgSpil() //Har bare kopieret koden direkte ind i Menuen i program-klassen i case 7
+    {
+		//Titel
+		Console.WriteLine("||Søg efter spil||");
+
+		//Bruger-Input
+	 Console.WriteLine("\nIndtast navn:");
+            string navn = Console.ReadLine();
+
+    Console.WriteLine("Indtast minimum pris:");
+            double minPris = double.Parse(Console.ReadLine());
+
+    Console.WriteLine("Indtast maksimum pris:");
+            double maxPris = double.Parse(Console.ReadLine());
+
+    Console.WriteLine("Vælg en genre ved at indtaste nummeret :");
+            for (int i = 0; i<StamData.alleGenrer.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {StamData.alleGenrer[i]}");
+            }
+            int genreValg = int.Parse(Console.ReadLine());
+    string valgtGenre = StamData.alleGenrer[genreValg - 1];
+
+            Console.WriteLine("Vælg en aldersgruppe ved at indtaste nummeret:");
+            for (int i = 0; i<StamData.alleAlderGrupper.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {StamData.alleAlderGrupper[i]}");
+            }
+            int alderValg = int.Parse(Console.ReadLine());
+string valgtAlder = StamData.alleAlderGrupper[alderValg - 1];
+
+Console.WriteLine("Vælg antal spillere ved at indtaste nummeret :");
+for (int i = 0; i < StamData.alleAntalSpillere.Length; i++)
+{
+    Console.WriteLine($"{i + 1}. {StamData.alleAntalSpillere[i]}");
+}
+int antalSpillereValg = int.Parse(Console.ReadLine());
+string valgtAntalSpillere = StamData.alleAntalSpillere[antalSpillereValg - 1];
+
+var resultater = Lagersystem.SøgSpil(Lagersystem.Lager, navn, valgtGenre, minPris, maxPris, valgtAlder, valgtAntalSpillere);
+
+		//Udprint af søgeresultater
+Console.WriteLine("Søgeresultater:");
+foreach (Spil spil in resultater)
+{
+    Console.WriteLine($"Navn: {spil.Navn}, Genre: {spil.Genre}, Pris: {spil.NyPris}, Alder: {spil.AlderGruppe}, Antal Spillere: {spil.AntalSpillere}");
+}
+        } 
+	
 
 
     public void PrintLagerstatus() //Metode: udskriver en sorteret lagerlisten/ spil-listen
@@ -66,9 +120,8 @@ internal class Lagersystem
 
 	public void PrintForespørgsler(Spil spil) //Metode: Udskriver liste med forespørgsler  - Mangler info fra Spil-klassen
 	{
-		//Mangler info fra spil-klassen
 
-		foreach (Kunder kunde in spil.forespørgsler) 
+		foreach (Kunder kunde in spil.Forespørgsler) 
 		{
 			Console.WriteLine($"{kunde}");
 		}
