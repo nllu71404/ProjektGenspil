@@ -27,38 +27,23 @@ internal class Lagersystem
 	if(Lager.Contains(spil))
 			{
 			Lager.Remove(spil);
-<<<<<<< HEAD
 			//Evt print af bekræftelse
-			Console.WriteLine($"{spil.navn} er fjernet fra lagerlisten"); //Der skal laves en properties/egenskaber af Spil-klassens attributter, så de andre klasser kan tilgå dem 
-=======
-			//Evt print af bekræftelse 
-			Console.WriteLine($"\n{spil.navn} er nu fjernet fra lagerlisten");  
->>>>>>> a8bbd3a2dc3dfc8a98407db4cdc6b2077036253f
+			Console.WriteLine($"{spil.Navn} er fjernet fra lagerlisten"); //Der skal laves en properties/egenskaber af Spil-klassens attributter, så de andre klasser kan tilgå dem 
+
 		} 
 	else
 		{
-			Console.WriteLine($"{spil.navn} findes ikke i lagerlisten");
+			Console.WriteLine($"{spil.Navn} findes ikke i lagerlisten");
 		}
 	}
 
 
-<<<<<<< HEAD
-  //  public List<Spil> SøgSpil(string navn = null, Enum genre = null, double pris = 0.00, Enum aldersgruppe = null, int SpillerAntal = 0, Enum sprog = null) //FEJL - ER IKKE FÆRDIG //Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
-  //  {
-		//var result = Lager.Where(spil =>
-		//	(navn == null || spil.navn.Contains(navn, StringComparison.OrdinalIgnoreCase)) ||
-		//	(genre == null || spil.genre.Equals(genre, StringComparison.OrdinalIgnoreCase)).ToString());
-  //      //IKKE FÆRDIG - I PROCESS
-       
 
-  //      return result;
-  //  }
-=======
-	public List<Spil> SøgSpil(string navn = null, string[] genre = null, string pris = null, string alder = null, string antalSpillere = null)//Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
-    {
+	//public List<Spil> SøgSpil(string navn = null, string[] genre = null, string pris = null, string alder = null, string antalSpillere = null)//Metode: Søgefunktion til at finde spil på lagerlisten ved hjælp af forskellige søgekriterier (navn, genre, aldersgruppe, sprog, stand, antal spillere)
+ //   {
 		
-    }
->>>>>>> a8bbd3a2dc3dfc8a98407db4cdc6b2077036253f
+ //   }
+
 
 	public void PrintLagerstatus() //Metode: udskriver en sorteret lagerlisten/ spil-listen
 	{
@@ -73,7 +58,7 @@ internal class Lagersystem
 	{
 		//Mangler info fra spil-klassen
 
-		foreach (Kunder kunde in spil.forespørgsler) 
+		foreach (Kunder kunde in spil.Forespørgsler) 
 		{
 			Console.WriteLine($"{kunde}");
 		}

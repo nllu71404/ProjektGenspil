@@ -7,20 +7,24 @@
       "RelativeMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|solutionrelative:projektgenspil\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|c:\\users\\yuurei\\desktop\\one\\uddannelse\\datamatiker\\vs projekter\\git\\projektgenspil\\projektgenspil\\myinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|solutionrelative:projektgenspil\\myinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|c:\\users\\yuurei\\desktop\\one\\uddannelse\\datamatiker\\vs projekter\\git\\projektgenspil\\projektgenspil\\stamdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|solutionrelative:projektgenspil\\stamdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|c:\\users\\yuurei\\desktop\\one\\uddannelse\\datamatiker\\vs projekter\\git\\projektgenspil\\projektgenspil\\lagersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|solutionrelative:projektgenspil\\lagersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|c:\\users\\yuurei\\desktop\\one\\uddannelse\\datamatiker\\vs projekter\\git\\projektgenspil\\projektgenspil\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|solutionrelative:projektgenspil\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|c:\\users\\yuurei\\desktop\\one\\uddannelse\\datamatiker\\vs projekter\\git\\projektgenspil\\projektgenspil\\spil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|solutionrelative:projektgenspil\\spil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|c:\\users\\yuurei\\desktop\\one\\uddannelse\\datamatiker\\vs projekter\\git\\projektgenspil\\projektgenspil\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|solutionrelative:projektgenspil\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|c:\\users\\yuurei\\desktop\\one\\uddannelse\\datamatiker\\vs projekter\\git\\projektgenspil\\projektgenspil\\lagersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|solutionrelative:projektgenspil\\lagersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E99BBC73-7767-48E2-8BE0-A30EBC509F77}|ProjektGenspil\\ProjektGenspil.csproj|c:\\users\\yuurei\\desktop\\one\\uddannelse\\datamatiker\\vs projekter\\git\\projektgenspil\\projektgenspil\\kunder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,83 +42,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SpilKopi.cs",
-              "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\SpilKopi.cs",
-              "RelativeDocumentMoniker": "ProjektGenspil\\SpilKopi.cs",
-              "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\SpilKopi.cs",
-              "RelativeToolTip": "ProjektGenspil\\SpilKopi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T10:20:14.114Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Kunder.cs",
-              "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Kunder.cs",
-              "RelativeDocumentMoniker": "ProjektGenspil\\Kunder.cs",
-              "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Kunder.cs",
-              "RelativeToolTip": "ProjektGenspil\\Kunder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T10:19:31.785Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MyInterface.cs",
+              "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\MyInterface.cs",
+              "RelativeDocumentMoniker": "ProjektGenspil\\MyInterface.cs",
+              "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\MyInterface.cs",
+              "RelativeToolTip": "ProjektGenspil\\MyInterface.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA5wCAAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T11:01:38.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "StamData.cs",
               "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\StamData.cs",
               "RelativeDocumentMoniker": "ProjektGenspil\\StamData.cs",
               "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\StamData.cs",
               "RelativeToolTip": "ProjektGenspil\\StamData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-24T10:18:22.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "InputOutput.cs",
               "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\InputOutput.cs",
               "RelativeDocumentMoniker": "ProjektGenspil\\InputOutput.cs",
               "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\InputOutput.cs",
               "RelativeToolTip": "ProjektGenspil\\InputOutput.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-24T10:17:53.99Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
+              "Title": "SpilKopi.cs",
+              "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\SpilKopi.cs",
+              "RelativeDocumentMoniker": "ProjektGenspil\\SpilKopi.cs",
+              "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\SpilKopi.cs",
+              "RelativeToolTip": "ProjektGenspil\\SpilKopi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T10:20:14.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Kunder.cs",
+              "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Kunder.cs",
+              "RelativeDocumentMoniker": "ProjektGenspil\\Kunder.cs",
+              "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Kunder.cs",
+              "RelativeToolTip": "ProjektGenspil\\Kunder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T10:19:31.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Lagersystem.cs",
               "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Lagersystem.cs",
               "RelativeDocumentMoniker": "ProjektGenspil\\Lagersystem.cs",
               "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Lagersystem.cs",
               "RelativeToolTip": "ProjektGenspil\\Lagersystem.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDUAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:30:22.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T16:30:22.398Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Spil.cs",
               "DocumentMoniker": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Spil.cs",
               "RelativeDocumentMoniker": "ProjektGenspil\\Spil.cs",
               "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Spil.cs",
               "RelativeToolTip": "ProjektGenspil\\Spil.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowD0AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T10:17:14.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T10:17:14.789Z"
             },
             {
               "$type": "Document",
@@ -124,7 +139,7 @@
               "RelativeDocumentMoniker": "ProjektGenspil\\Program.cs",
               "ToolTip": "C:\\Users\\yuurei\\Desktop\\One\\Uddannelse\\Datamatiker\\VS projekter\\GIT\\ProjektGenspil\\ProjektGenspil\\Program.cs",
               "RelativeToolTip": "ProjektGenspil\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T09:17:30.044Z",
               "EditorCaption": ""

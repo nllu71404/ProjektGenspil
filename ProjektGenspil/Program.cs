@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-﻿using System.Reflection.Metadata;
-=======
+﻿using System.ComponentModel.Design;
+using System.Reflection.Metadata;
 ﻿using System.Xml.Schema;
->>>>>>> a8bbd3a2dc3dfc8a98407db4cdc6b2077036253f
 
 namespace ProjektGenspil
 {
@@ -11,13 +9,12 @@ namespace ProjektGenspil
         static void Main(string[] args)
         {
             
-<<<<<<< HEAD
             Spil spil = new Spil();
             spil.OpdaterSpil();
             Lagersystem.Lager.Add(spil);
 
             //søg pris, antal spillere, genre
-=======
+
             //Program-menu - IN PROGRESS - for at kunne afprøve metoder
 
             Console.WriteLine("||Velkommen til Genspil lagerstyring. Vælg en mulighed i menuen||");
@@ -40,15 +37,8 @@ namespace ProjektGenspil
                     MyInterface.Menu();
                     break;
                 case 2:
-                    break;
-                   
-
+                    break;                   
             }
-
-
-
-           
->>>>>>> a8bbd3a2dc3dfc8a98407db4cdc6b2077036253f
         }
     }
 }
