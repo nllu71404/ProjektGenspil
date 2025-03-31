@@ -21,7 +21,7 @@ namespace ProjektGenspil
         private string antalSpillere;
         private string[] genre;
         private List<SpilKopi> kopiPåLager = new();
-        private List<Kunder> forespørgsler = new();
+        private List<Kunde> forespørgsler = new();
 
         //public properties
         public string Navn { get { return navn; } }
@@ -29,12 +29,13 @@ namespace ProjektGenspil
         public string AlderGruppe { get { return alderGruppe; } }
         public string AntalSpillere { get { return antalSpillere; } }
         public string[] Genre { get { return genre; } }
-        public List<Kunder> Forespørgsler { get { return forespørgsler; } }
+        public List<Kunde> Forespørgsler { get { return forespørgsler; } }
         
+
         //overloaded constructor simpel version
         public Spil()
         {
-            forespørgsler = new List<Kunder>(); //erklæres at det nye objekt også har en forespørgsel list
+            forespørgsler = new List<Kunde>(); //erklæres at det nye objekt også har en forespørgsel list
         }
 
         //constructor bliver kun kaldt af metoder i selve Spil klassen
@@ -45,7 +46,7 @@ namespace ProjektGenspil
             this.alderGruppe = alder;
             this.antalSpillere = antalSpillere;
             this.genre = genre;
-            forespørgsler = new List<Kunder>(); //erklæres at det nye objekt også har en forespørgsel list
+            forespørgsler = new List<Kunde>(); //erklæres at det nye objekt også har en forespørgsel list
         }
 
         //en formular til at udfylde info om spillet, kan bliver kaldet med Spil.OpretSpil();
@@ -54,7 +55,9 @@ namespace ProjektGenspil
             //make an instance of Spil klasse
             Spil tempSpil = new Spil();
             tempSpil.OpdaterSpil();
-            MyInterface.spilList.Add(tempSpil);
+            Lagersystem.Lager.Add(tempSpil);
+            
+            //MyInterface.spilList.Add(tempSpil);
         }
                 
         //starter en formular for at udfylde spil information, gemmer med F5
@@ -183,7 +186,7 @@ namespace ProjektGenspil
         }
 
         //tilføje en kunde til førespørgsel listen
-        public void TilføjeKunderForespørgsel(Kunder kunde)
+        public void TilføjeKunderForespørgsel(Kunde kunde)
         {
             forespørgsler.Add(kunde);
         }

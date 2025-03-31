@@ -3,6 +3,7 @@ using System.Reflection.Emit;
 using System.Reflection.Metadata;
 ﻿using System.Xml.Schema;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjektGenspil
 {
@@ -10,15 +11,31 @@ namespace ProjektGenspil
     {
         static void Main(string[] args)
         {
+            //Instans af Spil-klassen
+            Spil spil = new Spil();
+
+            //Test kunde-objekter tilføjet til forespørgsel-listen for at afprøve PrintForespørgsler metoden
+            Kunde LarsHansen = new Kunde("Lars Hansen", "20387745", "LarsH@gmail.com", "Ludo");
+            Kunde SimoneJensen = new Kunde("Simone Jensen", "44760211", "SiJensen@gmail.com", "Hitster");
+            Kunde AstridJohansen = new Kunde("Astrid Johansen", "22897102", "Astridjohansen@msn.com", "Matador");
+            Kunde JonasMathiasen = new Kunde("Jonas Mathiasen", "01038436", "Jonasersej@Hotmail.com", "Matador");
+
+            spil.TilføjeKunderForespørgsel(LarsHansen);
+            spil.TilføjeKunderForespørgsel(SimoneJensen);
+            spil.TilføjeKunderForespørgsel(AstridJohansen);
+            spil.TilføjeKunderForespørgsel(JonasMathiasen);
+
+
+
             //Test-Spil-objekter tilføjet til lagerlisten, for at afprøve søgefunktionen - Der er fejl i udskrivning af Genre!!
             string genre = StamData.alleGenrer[2];
             string[] genreArray4 = new string[] { genre };
 
-
             Spil spil1 = new Spil("Ticket to Ride", 299.99, StamData.alleAlderGrupper[1], StamData.alleAntalSpillere[0], genreArray4);
             Spil spil2 = new Spil("Exploding Kittens", 150.00, StamData.alleAlderGrupper[1], StamData.alleAntalSpillere[1], genreArray4);
-            Lagersystem.Lager.Add(spil1);
-            Lagersystem.Lager.Add(spil2);
+
+            Lagersystem.TilføjSpil(spil1);
+            Lagersystem.TilføjSpil(spil2);
 
 
             //Program-menu - IN PROGRESS - for at kunne afprøve metoder
@@ -36,74 +53,28 @@ namespace ProjektGenspil
             switch (valg)
             {
 
-                //case 5:
-                    //Console.WriteLine("Spil på lager:");
-                   // Lagersystem.PrintLagerstatus(); //Fejl!! Kan ikke kalde metoden - hvorfor?
-                    //break;
+                case 1:
+                    Spil.OpretSpil();
+                    break;
+                
+                case 2:
+                    Lagersystem.FjernSpil(Lagersystem.Lager);
+                    break;
+
+                case 5:
+                    Console.WriteLine("Spil på lager:");
+                   Lagersystem.PrintLagerstatus(); 
+                    break;
+
+                    case 6:
+                    Lagersystem.PrintForespørgsler(spil);
+                    break;
 
                 case 7:
 
-                    //SØGEFUNKTION
+                    Lagersystem.BrugerInputSøgSpil();
 
-                    //Titel
-                    Console.WriteLine("||Søg efter spil||");
-
-                    //Bruger-Input
-                    Console.WriteLine("\nIndtast navn (tryk Enter for at springe over):");
-                    string navn = Console.ReadLine();
-
-                    Console.WriteLine("Indtast minimum pris (tryk Enter for at springe over):");
-                    string minPrisInput = Console.ReadLine();
-                    double minPris = string.IsNullOrEmpty(minPrisInput) ? 0 : double.Parse(minPrisInput);
-
-
-                    Console.WriteLine("Indtast maksimum pris (tryk Enter for at springe over):");
-                    string maxPrisInput = Console.ReadLine();
-                    double maxPris = string.IsNullOrEmpty(maxPrisInput) ? double.MaxValue : double.Parse(maxPrisInput);
-
-
-                    Console.WriteLine("Vælg en genre ved at indtaste nummeret (tryk Enter for at springe over):");
-                    for (int i = 0; i < StamData.alleGenrer.Length; i++)
-                    {
-                        Console.WriteLine($"{i + 1}. {StamData.alleGenrer[i]}");
-                    }
-                    string genreValgInput = Console.ReadLine();
-                    string valgtGenre = string.IsNullOrEmpty(genreValgInput) ? null : StamData.alleGenrer[int.Parse(genreValgInput) - 1];
-
-
-                    Console.WriteLine("Vælg en aldersgruppe ved at indtaste nummeret (tryk Enter for at springe over):");
-                    for (int i = 0; i < StamData.alleAlderGrupper.Length; i++)
-                    {
-                        Console.WriteLine($"{i + 1}. {StamData.alleAlderGrupper[i]}");
-                    }
-                    string alderValgInput = Console.ReadLine();
-                    string valgtAlder = string.IsNullOrEmpty(alderValgInput) ? null : StamData.alleAlderGrupper[int.Parse(alderValgInput) - 1];
-
-
-                    Console.WriteLine("Vælg antal spillere ved at indtaste nummeret (tryk Enter for at springe over):");
-                    for (int i = 0; i < StamData.alleAntalSpillere.Length; i++)
-                    {
-                        Console.WriteLine($"{i + 1}. {StamData.alleAntalSpillere[i]}");
-                    }
-                    string antalSpillereValgInput = Console.ReadLine();
-                    string valgtAntalSpillere = string.IsNullOrEmpty(antalSpillereValgInput) ? null : StamData.alleAntalSpillere[int.Parse(antalSpillereValgInput) - 1];
-
-                    //Kalder SøgSpil metoden for at vise søgeresultater
-                    var resultater = Lagersystem.SøgSpil(Lagersystem.Lager, navn, valgtGenre, minPris, maxPris, valgtAlder, valgtAntalSpillere);
-
-                    //Udprint af søgeresultater
-                    Console.WriteLine("Søgeresultater:");
-                    if (resultater.Count == 0)
-                    {
-                        Console.WriteLine("Ingen spil fundet, der matcher dine søgekriterier.");
-                    }
-                    else
-                    {
-                        foreach (Spil spil in resultater)
-                        {
-                            Console.WriteLine($"Navn: {spil.Navn}, Genre: {spil.Genre}, Pris: {spil.NyPris}, Alder: {spil.AlderGruppe}, Antal Spillere: {spil.AntalSpillere}");
-                        }
-                    }
+                    Console.ReadLine();
 
                         break;
                     }

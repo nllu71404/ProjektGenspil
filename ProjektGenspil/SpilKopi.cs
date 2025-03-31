@@ -11,7 +11,7 @@ namespace ProjektGenspil
     {
         double pris;
         string stand;
-        Kunder reservation;
+        Kunde reservation;
 
         public SpilKopi() { }
         public SpilKopi(string navn, double nyPris, string alder, string antalSpillere, string[] genre, double pris, string stand)
