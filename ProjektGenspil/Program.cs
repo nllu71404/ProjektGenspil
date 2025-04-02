@@ -28,11 +28,10 @@ namespace ProjektGenspil
 
 
             //Test-Spil-objekter tilføjet til lagerlisten, for at afprøve søgefunktionen - Der er fejl i udskrivning af Genre!!
-            string genre = StamData.alleGenrer[2];
-            string[] genreArray4 = new string[] { genre };
+           
 
-            Spil spil1 = new Spil("Ticket to Ride", 299.99, StamData.alleAlderGrupper[1], StamData.alleAntalSpillere[0], genreArray4);
-            Spil spil2 = new Spil("Exploding Kittens", 150.00, StamData.alleAlderGrupper[1], StamData.alleAntalSpillere[1], genreArray4);
+            Spil spil1 = new Spil("Ticket to Ride", 299.99, StamData.alleAlderGrupper[1], StamData.alleAntalSpillere[0], StamData.alleGenrer[0..1]);
+            Spil spil2 = new Spil("Exploding Kittens", 150.00, StamData.alleAlderGrupper[1], StamData.alleAntalSpillere[1], [StamData.alleGenrer[0], StamData.alleGenrer[3]]);
 
             Lagersystem.TilføjSpil(spil1);
             Lagersystem.TilføjSpil(spil2);

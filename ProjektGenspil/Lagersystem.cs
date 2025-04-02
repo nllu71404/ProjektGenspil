@@ -122,7 +122,7 @@ internal class Lagersystem
 
         foreach (Spil spil in sorteredeLager)
         {
-            Console.WriteLine($"Navn: {spil.Navn}, Genre: {spil.Genre}, Pris: {spil.NyPris} kr, Alder: {spil.AlderGruppe}, Antal Spillere: {spil.AntalSpillere}");
+            Console.WriteLine($"Navn: {spil.Navn}, Genre: {spil.Genre[0]}, Pris: {spil.NyPris} kr, Alder: {spil.AlderGruppe}, Antal Spillere: {spil.AntalSpillere}");
         }
 
 	}
