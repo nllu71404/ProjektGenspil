@@ -7,74 +7,52 @@ using System.Threading.Tasks;
 namespace ProjektGenspil
 {
     internal class MyInterface
-    {
-        //colors interface
-        private readonly static string greenCursor = "=> \u001b[32m";
-        private readonly static string green = "\u001b[32m";
-        private readonly static string nonColor = "\u001b[0m";
-        private readonly static string bGYellow = "\u001b[43m";
-        private readonly static string selected = "\u001b[36;1m";
-
-        public static string GreenCursor {  get { return greenCursor; } }
-        public static string Green {  get { return greenCursor; } }
-        public static string NonColor { get { return nonColor; } }
-        public static string BGYellow { get { return bGYellow; } }
-        public static string Selected { get { return selected; } }
-
-
-
+    {        
         public static List<Spil> spilList = new List<Spil>();
-        //List<Kopi> påLager = new List<Kopi>();
+        public static List<SpilKopi> spilKopiList = new List<SpilKopi>();
+        public static List<Spil> spilListSorting = spilList;
+        
 
-
-        public static void printHeader()
+        public static void LagerMenu()
         {
-            Console.SetCursorPosition(0, 0);
-            Console.Write("F1 Lager".PadRight(16) + "F2 Opret Spil".PadRight(16) + "F5 Gem".PadRight(16) + "F9 Udskriv");
+            Menu.currentPage = menuPages.spilLagerMenu;
+            string[][] jarray = new string[spilList.Count+1][];
+            jarray[0] = ["Navn".PadRight(20),"Ny Pris".PadRight(20),"Alder Gruppe".PadRight(20),"Antal Spillere".PadRight(20),"På Lager".PadRight(20),"Forespørgsler"];
+            for (int i = 0; i < spilList.Count; i++) { jarray[i+1] = [spilList[i].PrintSpilToMenu()]; }
+            List<string> empty = new List<string>();
+
+            Menu lagerMenu = new Menu(jarray, empty,0,0,0,1);
+            lagerMenu.PrintMenu(0,3,false);
+        }
+                
+
+        public static void PåLager()
+        {
+            Menu.currentPage = menuPages.spilKopiMenu;
+            string[][] jarray = new string[spilKopiList.Count + 1][];
+            jarray[0] = ["Navn".PadRight(20), "Pris".PadRight(20), "Sprog".PadRight(20), "Stand".PadRight(20),"Reserveret af"];
+            for (int i = 0; i < spilKopiList.Count; i++) { jarray[i + 1] = [spilKopiList[i].PrintSpilToMenu()];}
+            List<string> empty = new List<string>();
+
+            Menu kopiMenu = new Menu (jarray, empty,0,0,0,1);
+            kopiMenu.PrintMenu(0,3,false);
         }
 
-
-        public static void Menu()
+        public static void TilføjeNytSpil ()
         {
-            ConsoleKeyInfo key;
-            int choice = 0;
-            while (true)
-            {
-                printHeader();
-                Console.SetCursorPosition(0, 3);
-                Console.WriteLine("Navn".PadRight(20) + "Ny Pris".PadRight(20) + "Alder Grupper".PadRight(20) + "Antal Spillere".PadRight(20) + "Antal kopier".PadRight(20) + "Efterspørgsel".PadRight(20));
-                Console.SetCursorPosition(0, 4);
-                foreach (Spil spil in spilList)
-                {
-                    if (choice == spilList.IndexOf(spil)) Console.Write(MyInterface.Green);
-                    spil.PrintSpilOneLine();
-                    Console.Write(MyInterface.NonColor);
-                }
-                key = Console.ReadKey(true);
-                switch (key.Key)
-                {
-                    case ConsoleKey.DownArrow:
-                        choice = (choice == spilList.Count - 1 ? choice = 0 : choice + 1);
-                        break;
-                    case ConsoleKey.UpArrow:
-                        choice = (choice == 0 ? choice = spilList.Count - 1 : choice - 1);
-                        break;
-                    case ConsoleKey.Enter:
-                        Console.Clear();
-                        spilList[choice].OpdaterSpil();
-                        break;
-                    case ConsoleKey.F2:
-                        Console.Clear();
-                        Spil.OpretSpil();
-                        break;
-                }
-                InputOutput.SaveSpil();
-            }
+            Spil tempSpil = new Spil();
+            tempSpil.Formular();
+        }
+        
+        public static void FjernEtSpil(Spil spil)
+        {
+            spilList.Remove(spil);
         }
 
-        public static void Search()
+        public static void TilføjeEnSpilKopi (Spil spil)
         {
-            spilList.AsEnumerable();
+            SpilKopi tempKopi = new SpilKopi(spil);
+            tempKopi.Formular();
         }
     }
 }

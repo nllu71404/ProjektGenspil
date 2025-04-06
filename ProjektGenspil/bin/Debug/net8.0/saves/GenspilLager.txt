@@ -1,2 +1,1 @@
-sspil1,500,4-5 år,3-6 spillere,selskabsspil
-spil3,250,8-9 år,3-6 spillere,familiespil,voksenspil
+spil 1,250,4-5 år,2-4 spillere,,selskabsspil

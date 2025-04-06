@@ -8,6 +8,7 @@ namespace ProjektGenspil;
 internal class Lagersystem
 {
 	public static List<Spil> Lager;
+	public static List<SpilKopi> LagerKopi;
 
 	public Lagersystem()
 	{

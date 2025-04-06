@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 using ProjektGenspil;
 
@@ -15,20 +16,21 @@ namespace ProjektGenspil
     internal class Spil
     {
         //class Spil Attributter, gælder for hver objekt
-        private string navn { get; set; } = "Skriv navn";
-        private string nyPris { get; set; } = "Skriv pris";
-        private string alderGruppe;
-        private string antalSpillere;
-        private string[] genre;
-        private List<SpilKopi> kopiPåLager = new();
-        private List<Kunder> forespørgsler = new();
+        protected string navn { get; set; }
+        protected double nyPris { get; set; }
+        protected string alderGruppe = "";
+        protected string antalSpillere = "";
+        protected string[] genre = [""];
+        protected List<SpilKopi> kopiPåLager = new();
+        protected List<Kunder> forespørgsler = new();
 
         //public properties
         public string Navn { get { return navn; } }
-        public string NyPris { get { return nyPris; } }
+        public double NyPris { get { return nyPris; } }
         public string AlderGruppe { get { return alderGruppe; } }
         public string AntalSpillere { get { return antalSpillere; } }
         public string[] Genre { get { return genre; } }
+        public List<SpilKopi> KopiPåLager { get { return kopiPåLager; } }
         public List<Kunder> Forespørgsler { get { return forespørgsler; } }
         
         //overloaded constructor simpel version
@@ -38,7 +40,7 @@ namespace ProjektGenspil
         }
 
         //constructor bliver kun kaldt af metoder i selve Spil klassen
-        public Spil(string navn, string pris, string alder, string antalSpillere, string[] genre)
+        public Spil(string navn, double pris, string alder, string antalSpillere, string[] genre)
         {
             this.navn = navn;
             this.nyPris = pris;
@@ -47,124 +49,13 @@ namespace ProjektGenspil
             this.genre = genre;
             forespørgsler = new List<Kunder>(); //erklæres at det nye objekt også har en forespørgsel list
         }
-
-        //en formular til at udfylde info om spillet, kan bliver kaldet med Spil.OpretSpil();
-        public static void OpretSpil()
-        {
-            //make an instance of Spil klasse
-            Spil tempSpil = new Spil();
-            tempSpil.OpdaterSpil();
-            MyInterface.spilList.Add(tempSpil);
-        }
-                
-        //starter en formular for at udfylde spil information, gemmer med F5
-        public void OpdaterSpil()
-        {
-            MyInterface.printHeader();
-            //make a jagged array where each position is assigned a number, use the arrow keys to move the cursor
-            string[][] jarray = new string[5][];
-            jarray[0] = new string[] { "Navn:", navn };
-            jarray[1] = new string[] { "Ny Pris:", nyPris };
-            jarray[2] = ["Alder Grupper:",..StamData.AlleAlderGrupper];
-            jarray[3] = ["Antal Spillere:",..StamData.AlleAntalSpillere];
-            jarray[4] = ["Genrer:", ..StamData.AlleGenrer]; 
-
-            //temporary variables            
-            List<string> tempGenrer = new();
-            if (genre != null) { tempGenrer = genre.ToList(); }
-            List<string> tempSpilStringList = new List<string> { alderGruppe, antalSpillere };
-            tempSpilStringList.AddRange(tempGenrer);
-
-            int ver = 0;
-            int hor = 1;
-            bool stillNotDone = true;
-            ConsoleKeyInfo key;
-
-
-            while (stillNotDone)
-            {
-                Console.SetCursorPosition(0, 3);
-
-                foreach (string[] array in jarray)
-                {
-                    foreach (string s in array)
-                    {
-                        string a = "";
-                        if (tempSpilStringList.Contains(s)) { a = MyInterface.Selected + s + MyInterface.NonColor; } else { a = s; }
-                        Console.Write((jarray[ver][hor] == s ? ($"{MyInterface.BGYellow}{(a + MyInterface.NonColor).PadRight(20)}") : a.PadRight(20)));
-                    }
-                    Console.WriteLine();
-                }
-
-                key = Console.ReadKey(true);
-                switch (key.Key)
-                {
-                    case ConsoleKey.DownArrow:
-                        hor = 1;
-                        ver = (ver == jarray.Length - 1 ? 0 : ver + 1);
-                        break;
-                    case ConsoleKey.UpArrow:
-                        hor = 1;
-                        ver = (ver == 0 ? jarray.Length - 1 : ver - 1);
-                        break;
-                    case ConsoleKey.RightArrow:
-                        hor = (hor == jarray[ver].Length - 1 ? 1 : hor + 1);
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        hor = (hor == 1 ? jarray[ver].Length - 1 : hor - 1);
-                        break;
-                    case ConsoleKey.Spacebar:
-                            if (ver < 2)
-                            {
-                                Console.CursorVisible = true;
-                                jarray[ver][hor] = Console.ReadLine();
-                                Console.CursorVisible = false;
-                            }
-                            else if (ver == 2)
-                            {
-                                tempSpilStringList.Remove(alderGruppe);
-                                alderGruppe = jarray[ver][hor];
-                                tempSpilStringList.Add(alderGruppe);                                
-                            }
-                            else if (ver == 3)
-                            {
-                                tempSpilStringList.Remove(antalSpillere);
-                                antalSpillere = jarray[ver][hor];
-                                tempSpilStringList.Add(antalSpillere);
-                            }
-                            else
-                            {
-                                if (tempSpilStringList.Contains(jarray[ver][hor]))
-                                {
-                                    tempGenrer.Remove(jarray[ver][hor]);
-                                    tempSpilStringList.Remove(jarray[ver][hor]);
-                                }
-                                else
-                                {
-                                    tempGenrer.Add(jarray[ver][hor]);
-                                    tempSpilStringList.Add(jarray[ver][hor]);
-                                }                                
-                            }
-                        Console.Clear();
-                        MyInterface.printHeader();                        
-                        break;
-                    case ConsoleKey.F5:
-                        {
-                            navn = jarray[0][1];
-                            nyPris = jarray[1][1];
-                            genre = tempGenrer.ToArray();
-                        }
-                        stillNotDone = false;
-                        break;
-                }
-            }
-            Console.Clear();
-        }
+        
 
         //udskriver Spil information på en linje
-        public void PrintSpilOneLine()
-        {
-            Console.WriteLine(navn.PadRight(20) + nyPris.PadRight(20) + alderGruppe.PadRight(20) + antalSpillere.PadRight(20) + Convert.ToString(kopiPåLager.Count).PadRight(20) + forespørgsler.Count);
+        public virtual string PrintSpilToMenu()
+        {            
+            string line =(navn==null? "error":navn.PadRight(20)+ Convert.ToString(nyPris).PadRight(20) + alderGruppe.PadRight(20) + antalSpillere.PadRight(20) + Convert.ToString(kopiPåLager.Count).PadRight(20) + forespørgsler.Count);
+            return line;
         }
 
         //tilføje en Spilkopi til listen
@@ -180,14 +71,83 @@ namespace ProjektGenspil
         }
 
         //converterer spil information til en format
-        public string ConvertSpilInfoToSave()
+        
+
+        public string SaveGamesToString()
         {
-            string s = $"{navn},{nyPris},{alderGruppe},{antalSpillere}";
+            string line = $"{navn},{nyPris},{alderGruppe},{antalSpillere}";
             foreach (string a in genre)
             {
-                s = s + "," + a;
+                line = line + "," + a;
+            }            
+            foreach (SpilKopi kopi in kopiPåLager)
+            {
+                line = line + "|" + kopi.SaveGamesCopyToString();
             }
-            return s;
+            return line;
+        }
+
+        private static List<string> SaveGamesToList()
+        {
+            List<string> list = new List<string>();
+            foreach (Spil spil in MyInterface.spilList)
+            {
+                list.Add(spil.SaveGamesToString());
+            }
+            return list;
+        }
+
+        public static void SaveGames ()
+        {
+            InputOutput saveGames = new InputOutput("Games.txt");
+            saveGames.SaveFile(SaveGamesToList());
+        }
+
+        public static void LoadGames()
+        {
+            InputOutput loadGames = new InputOutput("Games.txt");
+            List<string> list = loadGames.LoadFile();
+            foreach (string line in list)
+            {
+                string[] entries = line.Split("|");
+                List <string> allInfoToList = entries[0].Split(",").ToList();
+                Spil temp = new Spil();
+                temp.ConvertFromList(allInfoToList);
+                MyInterface.spilList.Add(temp);
+                for (int i = 1; i < entries.Length; i++)
+                {
+                    List <string> listToKopi = entries[1].Split(",").ToList();
+                    SpilKopi kopi = new SpilKopi(temp);
+                    kopi.ConvertFromList(listToKopi);
+                    temp.kopiPåLager.Add(kopi);
+                    MyInterface.spilKopiList.Add(kopi);
+                }
+            }
+        }
+
+
+
+        public virtual void Formular()
+        {            
+            string[][] jarray = new string[5][];
+            jarray[0] = (navn == null ? ["Navn:", "skriv navn"] : ["Navn:", navn]);
+            jarray[1] = (nyPris == null ? ["Ny Pris:", "skriv pris"] : ["Ny Pris:", Convert.ToString(nyPris)]);
+            jarray[2] = ["Alder Grupper:", .. StamData.alleAlderGrupper];
+            jarray[3] = ["Antal Spillere:", .. StamData.alleAntalSpillere];
+            jarray[4] = ["Genrer:", .. StamData.alleGenrer];
+
+            List<string> allInfoToList = [navn==null?"navn":navn,  Convert.ToString(nyPris), alderGruppe, antalSpillere, ..genre];
+
+            Menu spilMenu = new Menu(jarray, allInfoToList, 2, 2, 1,0);
+            spilMenu.PrintMenu(0, 3, true);
+        }
+        public virtual void ConvertFromList (List<string> allInfoToList)
+        {
+            navn = allInfoToList[0];
+            nyPris=Convert.ToDouble(allInfoToList[1]);
+            alderGruppe=allInfoToList[2];
+            antalSpillere=allInfoToList[3];
+            genre = allInfoToList.ToArray()[4..allInfoToList.Count];
         }
     }
 }

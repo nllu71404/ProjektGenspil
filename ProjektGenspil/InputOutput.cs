@@ -7,43 +7,49 @@ using System.Threading.Tasks;
 namespace ProjektGenspil
 {
     internal class InputOutput
-    {
+    {        
+        private string StreamFilePath { get; set; }
         public static string savesFolder = Directory.GetCurrentDirectory() + @"\saves";
         public static string filePath = savesFolder + @"\GenspilLager.txt";
 
+        public InputOutput (string streamFilePath)
+        {
+            this.StreamFilePath = StreamFilePath+streamFilePath;
+        }
+
         public static void Initialize()
         {
-            if (!Directory.Exists(savesFolder))
-            {
-                Directory.CreateDirectory(savesFolder);
-            }
-            if (!File.Exists(filePath))
-            {
-                File.Create(filePath);
-            }
-            LoadSpil();
+            Spil.LoadGames();
+            Kunder.LoadKunder();
         }
-        public static void LoadSpil()
+
+        public void SaveFile (List <string> listStrings)
         {
-            List<string> load = File.ReadAllLines(filePath).ToList();
-            foreach (string line in load)
+            using (StreamWriter sw = new StreamWriter(StreamFilePath))
             {
-                string[] entries = line.Split(',');
-                string[] tempGenre = entries[4..(entries.Length - 1)]; //genre starts from index 4 and forth
-                Spil tempspil = new Spil(entries[0], entries[1], entries[2], entries[3], tempGenre);
-                MyInterface.spilList.Add(tempspil);
+                foreach (var line in listStrings)
+                {
+                    sw.WriteLine(line);
+                }
             }
         }
 
-        public static void SaveSpil()
+        public List<string> LoadFile()
         {
-            List<string> output = new List<string>();
-            foreach (Spil spil in MyInterface.spilList)
+            FileStream fileStream = new FileStream (StreamFilePath,FileMode.OpenOrCreate);
+            List <string> listStrings = new List<string>();
+            using (StreamReader sr = new StreamReader(fileStream))
             {
-                string line = spil.ConvertSpilInfoToSave();
-                output.Add(line);
+                string line;
+                while ((line = sr.ReadLine())!=null)
+                {
+                    if(!string.IsNullOrEmpty(line))
+                    {
+                        listStrings.Add(line);
+                    }
+                }
             }
-            File.WriteAllLines(filePath, output);
+            return listStrings;
         }
     }
 }

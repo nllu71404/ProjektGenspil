@@ -12,6 +12,7 @@ namespace ProjektGenspil
         public readonly static string[] alleAlderGrupper = {"4-5 år", "6-7 år", "8-9 år", "10-12 år", "13-16 år", "16 år+", "18 år+", "8 år", "10 år" };
         public readonly static string[] alleAntalSpillere = {"2-4 spillere", "3-6 spillere" };
         public readonly static string[] alleGenrer = {"klassiske spil", "selskabsspil", "familiespil", "voksenspil", "strategispil", "børnespil", "quiz", "Små spil", "Escape Room", "Rollespile", "Bingo/banko", "Udvidelse" };
-                
+        public readonly static string[] alleSprog = { "dansk", "engelsk" };
+        public readonly static string[] alleStand = { "ny", "næsten ny", "let brugt", "brugt" };
     }
 }
