@@ -21,3 +21,10 @@ C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGen
 C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.dll
 C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\refint\ProjektGenspil.dll
 C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.pdb
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\bin\Debug\net8.0\ProjektGenspil.exe
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\bin\Debug\net8.0\ProjektGenspil.deps.json
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\bin\Debug\net8.0\ProjektGenspil.runtimeconfig.json
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\bin\Debug\net8.0\ProjektGenspil.dll
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\bin\Debug\net8.0\ProjektGenspil.pdb
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ProjektGenspil.genruntimeconfig.cache
+C:\Users\lene_\Desktop\ProjektGenspil\ProjektGenspil\obj\Debug\net8.0\ref\ProjektGenspil.dll

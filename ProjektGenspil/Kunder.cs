@@ -17,7 +17,23 @@ namespace ProjektGenspil
         private string emailAdresse;
         public List<Spil> forespørgsel = new();
 
+
+        private string spilForespørgsel;
+
+        //Properties 
         public string Navn { get { return navn; } }
+        public string MobilNummer { get { return mobilNummer; } }
+        public string EmailAdresse { get { return emailAdresse; } }
+        public string SpilForespørgsel { get { return spilForespørgsel;} }
+
+
+        public Kunder(string navn, string mobilNummer, string emailAdresse, string spilForespørgsel) 
+        {
+            this.navn = navn;
+            this.mobilNummer = mobilNummer;
+            this.emailAdresse = emailAdresse;
+            this.spilForespørgsel = spilForespørgsel;
+        }
 
         public Kunder() 
         {
@@ -165,4 +181,5 @@ namespace ProjektGenspil
             return tempKunde;
         }
     }    
+
 }

@@ -22,6 +22,7 @@ namespace ProjektGenspil
         private string AntalSpillere { get { return main.AntalSpillere; } }
         private string[] Genre { get { return main.Genre; } }
 
+
         public SpilKopi(string navn, double nyPris, string alder, string antalSpillere, string[] genre, double pris, string stand)
             : base(navn, nyPris, alder, antalSpillere, genre)
         {

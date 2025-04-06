@@ -16,6 +16,7 @@ namespace ProjektGenspil
     internal class Spil
     {
         //class Spil Attributter, gælder for hver objekt
+
         protected string navn { get; set; }
         protected double nyPris { get; set; }
         protected string alderGruppe = "";
@@ -30,9 +31,12 @@ namespace ProjektGenspil
         public string AlderGruppe { get { return alderGruppe; } }
         public string AntalSpillere { get { return antalSpillere; } }
         public string[] Genre { get { return genre; } }
+
         public List<SpilKopi> KopiPåLager { get { return kopiPåLager; } }
         public List<Kunder> Forespørgsler { get { return forespørgsler; } }
+
         
+
         //overloaded constructor simpel version
         public Spil()
         {
@@ -49,7 +53,6 @@ namespace ProjektGenspil
             this.genre = genre;
             forespørgsler = new List<Kunder>(); //erklæres at det nye objekt også har en forespørgsel list
         }
-        
 
         //udskriver Spil information på en linje
         public virtual string PrintSpilToMenu()
