@@ -13,6 +13,6 @@ namespace ProjektGenspil
         public readonly static string[] alleAntalSpillere = {"2-4 spillere", "3-6 spillere" };
         public readonly static string[] alleGenrer = {"klassiske spil", "selskabsspil", "familiespil", "voksenspil", "strategispil", "børnespil", "quiz", "Små spil", "Escape Room", "Rollespile", "Bingo/banko", "Udvidelse" };
         public readonly static string[] alleSprog = { "dansk", "engelsk" };
-        public readonly static string[] alleStand = { "ny", "næsten ny", "let brugt", "brugt" };
+        public readonly static string[] alleStand = { "helt ny", "god stand", "ok stand", "lidt slidt","kan måske reddes", "til rep" };
     }
 }

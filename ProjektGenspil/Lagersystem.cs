@@ -9,20 +9,52 @@ namespace ProjektGenspil;
 internal class Lagersystem
 {
 
-	
-	public static List<SpilKopi> LagerKopi;
-
 	public static List<Spil> Lager = new List<Spil>();
-
-
-	public Lagersystem()
-	{
-
-	}
+	
+	public static List<SpilKopi> LagerKopi = new List<SpilKopi>();
 
 
 
-	public static void TilføjSpil(Spil spil) //Metode: tilføjer spil til lagerlisten
+    public static void LagerMenu()
+    {
+        Menu.currentPage = menuPages.spilLagerMenu;
+        string[][] jarray = new string[Lager.Count + 1][];
+        jarray[0] = ["Navn".PadRight(20), "Ny Pris".PadRight(20), "Alder Gruppe".PadRight(20), "Antal Spillere".PadRight(20), "På Lager".PadRight(20), "Forespørgsler"];
+        for (int i = 0; i < Lager.Count; i++) { jarray[i + 1] = [Lager[i].PrintSpilToMenu()]; }
+        List<string> empty = new List<string>();
+
+        Menu lagerMenu = new Menu(jarray, empty, 0, 0, 0, 1);
+        lagerMenu.PrintMenu(0, 3, false);
+    }
+
+
+    public static void PåLager()
+    {
+        Menu.currentPage = menuPages.spilKopiMenu;
+        string[][] jarray = new string[LagerKopi.Count + 1][];
+        jarray[0] = ["Navn".PadRight(20), "Pris".PadRight(20), "Sprog".PadRight(20), "Stand".PadRight(20), "Reserveret af"];
+        for (int i = 0; i < LagerKopi.Count; i++) { jarray[i + 1] = [LagerKopi[i].PrintSpilToMenu()]; }
+        List<string> empty = new List<string>();
+
+        Menu kopiMenu = new Menu(jarray, empty, 0, 0, 0, 1);
+        kopiMenu.PrintMenu(0, 3, false);
+    }
+
+    public static void TilføjeNytSpil()
+    {
+        Spil tempSpil = new Spil();
+        tempSpil.Formular();
+    }
+
+
+    public static void TilføjeEnSpilKopi(Spil spil)
+    {
+        SpilKopi tempKopi = new SpilKopi(spil);
+        tempKopi.Formular();
+    }
+
+
+    public static void TilføjSpil(Spil spil) //Metode: tilføjer spil til lagerlisten
 	{
 		Lager.Add(spil);
 		//evt udskrift af bekræftelse 
@@ -116,6 +148,9 @@ internal class Lagersystem
             Console.WriteLine($"Navn: {spil.Navn}, Genre: {spil.Genre}, Pris: {spil.NyPris}, Alder: {spil.AlderGruppe}, Antal Spillere: {spil.AntalSpillere}");
         }
 
+        Console.ReadLine();
+        Lagersystem.LagerMenu();
+
     }
 
 
@@ -128,8 +163,9 @@ internal class Lagersystem
         {
             Console.WriteLine($"Navn: {spil.Navn}, Genre: {spil.Genre[0]}, Pris: {spil.NyPris} kr, Alder: {spil.AlderGruppe}, Antal Spillere: {spil.AntalSpillere}");
         }
-
-	}
+        Console.ReadLine();
+        Lagersystem.LagerMenu();
+    }
 
 	public static void PrintForespørgsler(Spil spil) //Metode: Udskriver liste med forespørgsler sorteret efter Spil-navn 
 	{
@@ -144,5 +180,7 @@ internal class Lagersystem
             Console.WriteLine($"\nSpil: {kunde.SpilForespørgsel}"); 
             Console.WriteLine($"Forespurgt af: {kunde.Navn}, Tlf: {kunde.MobilNummer}, Email: {kunde.EmailAdresse}");
 		}
-	}
+        Console.ReadLine();
+        Lagersystem.LagerMenu();
+    }
 }

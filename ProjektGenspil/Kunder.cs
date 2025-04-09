@@ -169,7 +169,7 @@ namespace ProjektGenspil
             tempKunde.emailAdresse = entries[2];
             for (int i = 3;i<entries.Length;i++)
             {
-                foreach (var spil in MyInterface.spilList)
+                foreach (var spil in Lagersystem.Lager)
                 {
                     if (entries[i]==spil.Navn)
                     {

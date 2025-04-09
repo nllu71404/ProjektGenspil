@@ -13,7 +13,7 @@ namespace ProjektGenspil
 
         {
             InputOutput.Initialize();
-            MyInterface.LagerMenu();
+            Lagersystem.LagerMenu();
         
             //Instans af Spil-klassen
             Spil spil = new Spil();

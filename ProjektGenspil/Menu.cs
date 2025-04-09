@@ -75,7 +75,7 @@ namespace ProjektGenspil
             switch (currentPage)
             {
                 case menuPages.spilLagerMenu:
-                    header = "F1 Spil katalog".PadRight(16) + "F2 På lager".PadRight(16) + "F3 Kunder".PadRight(16) + "F5 Søg".PadRight(16) + "F6 Opret Spil".PadRight(16) + "F7 Opret Kopi".PadRight(16);
+                    header = "F1 Spil katalog".PadRight(16) + "F2 På lager".PadRight(16) + "F3 Kunder".PadRight(16) + "F5 Søg".PadRight(16) + "F6 Opret Spil".PadRight(16) + "F7 Opret Kopi".PadRight(16)+"F9 Print Lagerstatus";
                     break;
                 case menuPages.spilKopiMenu:
                     header = "F1 Spil katalog".PadRight(16) + "F2 På lager".PadRight(16) + "F3 Kunder".PadRight(16) + "F5 Søg".PadRight(16);
@@ -98,8 +98,6 @@ namespace ProjektGenspil
             }
             Console.Write(header);
         }
-                
-
         private void PrintContent ()
         {
             if(jarray.Length < 2) { jarray = [jarray[0],["empty"]]; }
@@ -119,7 +117,7 @@ namespace ProjektGenspil
             if (currentPage==menuPages.opdaterSpilForm)
             {
                 Console.Write("Forespørgsler:");
-                foreach (Kunder kunde in MyInterface.spilList[index].Forespørgsler)
+                foreach (Kunder kunde in Lagersystem.Lager[index].Forespørgsler)
                 {
                     Console.Write(kunde.Navn.PadRight(8));
                 }
@@ -127,9 +125,9 @@ namespace ProjektGenspil
             else if (currentPage==menuPages.opdaterSpilKopiForm)
             {
                 Console.Write("Reserveret af:");
-                if (MyInterface.spilKopiList[index].reservation != null)
+                if (Lagersystem.LagerKopi[index].reservation != null)
                 {
-                    Console.Write(MyInterface.spilKopiList[index].reservation.Navn.PadRight(8));
+                    Console.Write(Lagersystem.LagerKopi[index].reservation.Navn.PadRight(8));
                 }
             }
             else if(currentPage==menuPages.opdaterKunderForm)
@@ -168,24 +166,26 @@ namespace ProjektGenspil
                     break;
                 case ConsoleKey.F1:
                     stillNotDone= false;
-                    MyInterface.LagerMenu();
+                    Lagersystem.LagerMenu();
                     break;
                 case ConsoleKey.F2:
                     stillNotDone= false;
-                    MyInterface.PåLager();
+                    Lagersystem.PåLager();
                     break;
                 case ConsoleKey.F3:
                     stillNotDone = false;
                     Kunder.KundeMenu();
                     break;
                 case ConsoleKey.F5:
+                    stillNotDone = false;
+                    Lagersystem.BrugerInputSøgSpil();
                     break;
                 case ConsoleKey.F6:
                     if (currentPage==menuPages.spilLagerMenu)
                     {
                         currentPage=menuPages.nytSpilForm;
                         stillNotDone = false;
-                        MyInterface.TilføjeNytSpil();
+                        Lagersystem.TilføjeNytSpil();
                     }
                     else if (currentPage==menuPages.kunderMenu)
                     {
@@ -197,7 +197,7 @@ namespace ProjektGenspil
                     else if (currentPage==menuPages.opdaterSpilForm)
                     {
                         stillNotDone = false;
-                        Kunder.ChooseKunder(MyInterface.spilList[index]);
+                        Kunder.ChooseKunder(Lagersystem.Lager[index]);
                     }
                     break;
                 case ConsoleKey.F7:
@@ -206,11 +206,14 @@ namespace ProjektGenspil
                         currentPage=menuPages.nytSpilKopiForm;
                         stillNotDone = false;
                         index = ver - verOffset;
-                        MyInterface.TilføjeEnSpilKopi(MyInterface.spilList[ver-verOffset]);
+                        Lagersystem.TilføjeEnSpilKopi(Lagersystem.Lager[ver-verOffset]);
                     }
                     break;
                 case ConsoleKey.F8:
                     F8ButtonSave();
+                    break;
+                case ConsoleKey.F9:
+                    Lagersystem.PrintLagerstatus();
                     break;
             }
         }
@@ -247,13 +250,13 @@ namespace ProjektGenspil
             {
                 currentPage = menuPages.opdaterSpilForm;
                 index = ver - verOffset;
-                MyInterface.spilList[ver-verOffset].Formular();
+                Lagersystem.Lager[ver-verOffset].Formular();
             }
             else if (currentPage==menuPages.spilKopiMenu)
             {
                 currentPage = menuPages.opdaterSpilKopiForm;
                 index = ver - verOffset;
-                MyInterface.spilKopiList[ver-verOffset].Formular();
+                Lagersystem.LagerKopi[ver-verOffset].Formular();
             }
             else if (currentPage==menuPages.kunderMenu)
             {
@@ -268,34 +271,34 @@ namespace ProjektGenspil
             {
                 Spil temp = new Spil();
                 temp.ConvertFromList(allInfoToList);
-                MyInterface.spilList.Add(temp);
+                Lagersystem.Lager.Add(temp);
                 stillNotDone = false;
                 Spil.SaveGames();
-                MyInterface.LagerMenu();
+                Lagersystem.LagerMenu();
             }
             else if (currentPage==menuPages.opdaterSpilForm)
             {
-                MyInterface.spilList[index].ConvertFromList(allInfoToList);
+                Lagersystem.Lager[index].ConvertFromList(allInfoToList);
                 stillNotDone = false;
                 Spil.SaveGames();
-                MyInterface.LagerMenu();
+                Lagersystem.LagerMenu();
             }
             else if (currentPage==menuPages.nytSpilKopiForm)
             {
-                SpilKopi temp = new SpilKopi(MyInterface.spilList[index]);
+                SpilKopi temp = new SpilKopi(Lagersystem.Lager[index]);
                 temp.ConvertFromList(allInfoToList);
-                MyInterface.spilList[index].TilføjeSpilKopi(temp);
-                MyInterface.spilKopiList.Add(temp);
+                Lagersystem.Lager[index].TilføjeSpilKopi(temp);
+                Lagersystem.LagerKopi.Add(temp);
                 stillNotDone=false;
                 Spil.SaveGames();
-                MyInterface.PåLager();
+                Lagersystem.PåLager();
             }
             else if (currentPage==menuPages.opdaterSpilKopiForm)
             {
-                MyInterface.spilKopiList[index].ConvertFromList(allInfoToList);
+                Lagersystem.LagerKopi[index].ConvertFromList(allInfoToList);
                 stillNotDone=false;
                 Spil.SaveGames();
-                MyInterface.PåLager();
+                Lagersystem.PåLager();
             }
             else if (currentPage==menuPages.nyKunderForm)
             {
@@ -315,18 +318,18 @@ namespace ProjektGenspil
             }
             else if (currentPage==menuPages.chooseKunde)
             {
-                Kunder.ForespørgselConvertFromList(allInfoToList, MyInterface.spilList[index]);
+                Kunder.ForespørgselConvertFromList(allInfoToList, Lagersystem.Lager[index]);
                 stillNotDone = false;
                 Kunder.SaveKunder();
                 currentPage=menuPages.opdaterSpilForm;
-                MyInterface.spilList[index].Formular();
+                Lagersystem.Lager[index].Formular();
             }
             else if (currentPage==menuPages.reserver)
             {
-                Kunder.ForespørgselConvertFromList(allInfoToList, MyInterface.spilKopiList[index]);
+                Kunder.ForespørgselConvertFromList(allInfoToList, Lagersystem.LagerKopi[index]);
                 stillNotDone= false;
                 currentPage=menuPages.opdaterSpilKopiForm;
-                MyInterface.spilKopiList[index].Formular();
+                Lagersystem.LagerKopi[index].Formular();
             }
         }
     }

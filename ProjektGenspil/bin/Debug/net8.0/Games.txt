@@ -1,1 +1,5 @@
-spill 55,250,4-5 år,2-4 spillere,,klassiske spil,selskabsspil,voksenspil|200,dansk,næsten ny
+Sequence Original,0,4-5 år,2-4 spillere,,klassiske spil,selskabsspil
+Sequence Junior,0,4-5 år,2-4 spillere,,klassiske spil,selskabsspil,familiespil
+Sequence Giant,0,4-5 år,2-4 spillere,,klassiske spil
+Sequence Rejsespil,0,4-5 år,2-4 spillere,,klassiske spil
+spil 1,0,,,

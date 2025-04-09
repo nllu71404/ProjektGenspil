@@ -93,7 +93,7 @@ namespace ProjektGenspil
         private static List<string> SaveGamesToList()
         {
             List<string> list = new List<string>();
-            foreach (Spil spil in MyInterface.spilList)
+            foreach (Spil spil in Lagersystem.Lager)
             {
                 list.Add(spil.SaveGamesToString());
             }
@@ -116,14 +116,14 @@ namespace ProjektGenspil
                 List <string> allInfoToList = entries[0].Split(",").ToList();
                 Spil temp = new Spil();
                 temp.ConvertFromList(allInfoToList);
-                MyInterface.spilList.Add(temp);
+                Lagersystem.Lager.Add(temp);
                 for (int i = 1; i < entries.Length; i++)
                 {
                     List <string> listToKopi = entries[1].Split(",").ToList();
                     SpilKopi kopi = new SpilKopi(temp);
                     kopi.ConvertFromList(listToKopi);
                     temp.kopiPåLager.Add(kopi);
-                    MyInterface.spilKopiList.Add(kopi);
+                    Lagersystem.LagerKopi.Add(kopi);
                 }
             }
         }
